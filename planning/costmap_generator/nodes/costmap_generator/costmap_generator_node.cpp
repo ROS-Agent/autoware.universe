@@ -464,12 +464,14 @@ void CostmapGenerator::publishCostmap(const grid_map::GridMap & costmap)
   grid_map::GridMapRosConverter::toOccupancyGrid(
     costmap, LayerName::combined, grid_min_value_, grid_max_value_, out_occupancy_grid);
   out_occupancy_grid.header = header;
-  pub_occupancy_grid_->publish(out_occupancy_grid);
+  //FIXME: bev
+  //pub_occupancy_grid_->publish(out_occupancy_grid);
 
   // Publish GridMap
   auto out_gridmap_msg = grid_map::GridMapRosConverter::toMessage(costmap);
   out_gridmap_msg->header = header;
-  pub_costmap_->publish(*out_gridmap_msg);
+  //FIXME: bev
+  //pub_costmap_->publish(*out_gridmap_msg);
 }
 
 #include <rclcpp_components/register_node_macro.hpp>
