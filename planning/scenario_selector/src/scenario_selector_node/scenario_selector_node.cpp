@@ -189,6 +189,9 @@ std::string ScenarioSelectorNode::selectScenarioByPosition()
 
 void ScenarioSelectorNode::updateCurrentScenario()
 {
+  // FIXME:新增
+  current_scenario_ = tier4_planning_msgs::msg::Scenario::PARKING;
+  return;
   const auto prev_scenario = current_scenario_;
 
   const auto scenario_trajectory = getScenarioTrajectory(current_scenario_);
